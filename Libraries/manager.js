@@ -4,10 +4,9 @@ const Employee = require('./employee');
 
 // EXTEND MANAGER CLASS FROM EMPLOYEE CLASS //
 class Manager extends Employee {
-    constructor (name, id, email, officeNumber) {
+    constructor (name, gitHub, eID, email, officeNumber, school) {
        
-        super (name, id, email); 
-        
+        super (name, gitHub, eID, email, school); 
         this.officeNumber = officeNumber; 
     }
 
