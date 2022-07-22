@@ -76,7 +76,7 @@ const generateFullHTML = (employeeListHTMLString) => {
 module.exports = generatePage = (data) => {
   // ARRAY FOR EMPLOYEE CARD HMTL STRINGS //
   let employeeCards = [];
- 
+
   for (let i = 0; i < data.length; i++) {
     const employee = data[i];
     const position = employee.getRole();
