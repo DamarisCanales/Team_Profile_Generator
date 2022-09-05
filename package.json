@@ -1,0 +1,23 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "Team_Profile_Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamarisCanales/Team_Profile_Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamarisCanales/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/DamarisCanales/Team_Profile_Generator#readme",
+  "dependencies": {
+    "inquirer": "^9.1.1"
+  }
+}
