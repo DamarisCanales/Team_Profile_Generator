@@ -1,0 +1,29 @@
+:root {
+    font-family: avenir, sans-serif;
+}
+
+.card-container {
+
+}
+.team {
+    letter-spacing: .2em;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.card {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+}
+
+.card-body {
+    margin: 0;
+    padding: 0;
+
+}
