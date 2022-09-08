@@ -52,19 +52,6 @@ const createTeam = async () => {
       },
       {
         type: "input",
-        name: "email",
-        message: "Please provide the manager's email address:",
-        validate: (input) => {
-          if (input) {
-            return true;
-          } else {
-            console.log("Please provide the manager's email address:");
-            return false;
-          }
-        },
-      },
-      {
-        type: "input",
         name: "officeNumber",
         message: "Please enter the manager's office number:",
         validate: (input) => {
@@ -76,6 +63,20 @@ const createTeam = async () => {
           }
         },
       },
+      {
+        type: "input",
+        name: "email",
+        message: "Please provide the manager's email address:",
+        validate: (input) => {
+          if (input) {
+            return true;
+          } else {
+            console.log("Please provide the manager's email address:");
+            return false;
+          }
+        },
+      },
+
     ])
     .then((input) => {
       const { name, eid, officeNumber, email } = input;
@@ -115,17 +116,17 @@ const addMember = async () => {
         type: "list",
         name: "position",
         message: "Please select employee's position:",
-        choices: ["engineer", "intern"],
+        choices: ["Engineer", "Intern"],
       },
       {
         type: "input",
         name: "name",
-        message: "Please enter the employee's full name",
+        message: "Please provide the employee's full name:",
         validate: (input) => {
           if (input) {
             return true;
           } else {
-            console.log("what is the employee's full name?");
+            console.log("Please provide the employee's full name:");
             return false;
           }
         },
@@ -133,25 +134,12 @@ const addMember = async () => {
       {
         type: "input",
         name: "eid",
-        message: "what is the employee's employee ID ?",
+        message: "Please enter the employee's ID:",
         validate: (input) => {
           if (input) {
             return true;
           } else {
-            console.log("please enter the employee's employee ID.");
-            return false;
-          }
-        },
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "what is the employee's email address ?",
-        validate: (input) => {
-          if (input) {
-            return true;
-          } else {
-            console.log("please enter the employee's email address.");
+            console.log("Please enter the employee's ID:");
             return false;
           }
         },
@@ -159,13 +147,13 @@ const addMember = async () => {
       {
         type: "input",
         name: "github",
-        message: "what is the engineer's github username ?",
+        message: "Please enter the engineer's github username:",
         when: (input) => input.position === "engineer",
         validate: (input) => {
           if (input) {
             return true;
           } else {
-            console.log("please enter the engineers's github username.");
+            console.log("Please enter the engineer's github username:");
             return false;
           }
         },
@@ -173,13 +161,26 @@ const addMember = async () => {
       {
         type: "input",
         name: "school",
-        message: "what is the intern's school ?",
+        message: "Please provide the name of the intern's school:",
         when: (input) => input.position === "intern",
         validate: (input) => {
           if (input) {
             return true;
           } else {
-            console.log("please enter the interns's school.");
+            console.log("Please provide the name of the intern's school:");
+            return false;
+          }
+        },
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Please enter the employee's email address:",
+        validate: (input) => {
+          if (input) {
+            return true;
+          } else {
+            console.log("Please enter the employee's email address:");
             return false;
           }
         },
@@ -187,20 +188,20 @@ const addMember = async () => {
       {
         type: "confirm",
         name: "addAnotherMember",
-        message: "would you like to add another employee ?",
+        message: "Would you like to add another employee?",
         default: "true",
       },
     ])
     .then((input) => {
       console.log(input);
       if (input.position === "engineer") {
-        const { name, eid, email, github } = input;
-        const engineer = new Engineer(name, eid, email, github);
+        const {name, eid, github, email} = input;
+        const engineer = new Engineer(name, eid, github, email);
         team.push(engineer);
       }
       if (input.position === "intern") {
-        const { name, eid, email, school } = input;
-        const intern = new Intern(name, eid, email, school);
+        const {name, eid, school, email} = input;
+        const intern = new Intern(name, eid, school, email);
         team.push(intern);
       }
       if (input.addAnotherMember) {
