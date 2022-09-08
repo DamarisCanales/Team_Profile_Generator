@@ -83,11 +83,11 @@ const createTeam = async () => {
       team.push(manager);
       addMember()
         .then((team) => {
-          console.log("...generating page ...");
+          console.log("... generating page ...");
           return generatePage(team);
         })
         .then((pageString) => {
-          console.log("...writing file ...");
+          console.log("... writing file ...");
           const pageOutput = fs.writeFile("./team.html", pageString, (err) => {
             err ? console.error(err) : console.log("html created");
           });
