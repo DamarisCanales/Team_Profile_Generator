@@ -32,7 +32,7 @@ const generateEngineerSection = (engineer) => {
     `;
 }
 
-// GENERATE INTERN SECTION //
+// GENERATE INTERN SECTION ////
 const generateInternSection = (intern) => {
     return `
      <div class="card col-md-3 col-sm-6 border-0">
