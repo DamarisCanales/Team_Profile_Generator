@@ -8,8 +8,8 @@ const generateManagerSection = (manager) => {
         </div>
         <div class="card-body border">
             <p class="eid"> Employee ID: ${manager.eid}</p>
-            <p class="email"> Email: <a class="link-primary" href="mailto:${manager.email}">${manager.email}</a></p>
             <p class="officeNumber"> Office Number: ${manager.officeNumber}</p>
+            <p class="email"> Email: <a class="link-primary" href="mailto:${manager.email}">${manager.email}</a></p>
          </div>
     </div>
     `;
@@ -25,14 +25,14 @@ const generateEngineerSection = (engineer) => {
         </div>
         <div class="card-body border">
             <p class="eid"> Employee ID: ${engineer.eid}</p>
-            <p class="email"> Email: <a class="link-primary" href="mailto:${engineer.email}">${engineer.email}</a></p>
             <p class="gitHub"> GitHub: <a class="link-primary" target="_blank" rel="noopener noreferrer" href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+            <p class="email"> Email: <a class="link-primary" href="mailto:${engineer.email}">${engineer.email}</a></p>
          </div>
     </div>
     `;
 }
 
-// GENERATE INTERN SECTION ////
+// GENERATE INTERN SECTION //
 const generateInternSection = (intern) => {
     return `
      <div class="card col-md-3 col-sm-6 border-0">
@@ -42,8 +42,8 @@ const generateInternSection = (intern) => {
         </div>
         <div class="card-body border">
             <p class="eid"> Employee ID: ${intern.eid}</p>
-            <p class="email"> Email: <a class="link-primary" href="mailto:${intern.email}">${intern.email}</a></p>
             <p class="gitHub"> School: ${intern.school}</p>
+            <p class="email"> Email: <a class="link-primary" href="mailto:${intern.email}">${intern.email}</a></p>
          </div>
     </div>
     `;
