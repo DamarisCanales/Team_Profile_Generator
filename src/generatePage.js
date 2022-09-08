@@ -74,10 +74,9 @@ const generateFullHTML = (employeeListHTMLString) => {
 }
 
 module.exports = generatePage = (data) => {
-    // CREATE ARRAY TO HOLD EMPLOYEE CARD HMTL STRINGS
+    // GENERATE ARRAY TO CONTAIN EMPLOYEE CARDS //
     let employeeCards = [];
-    // LOOP THROUGH DATA TO CREATE EMPLOYEE SECTIONS 
-    // BASED UPON POSITION AND PUSH TO employeeCards ARRAY
+    // DATA LOOP TO GENERATE THE EMPLOYEE SECTIONS //
     for (let i = 0; i < data.length; i++){
         const employee = data[i];
         const position = employee.getRole(); 
@@ -99,10 +98,10 @@ module.exports = generatePage = (data) => {
         
     }
 
-    // JOIN STRINGS
+    // JOIN STRINGS //
     const employeeListHTMLString = employeeCards.join('');
 
-    // PASS STRING TO GENERATE FULL HTML PAGE
+    // STRING TO GENERATE FULL HTML PAGE //
     const HTMLpage = generateFullHTML(employeeListHTMLString);
     return HTMLpage;
 }
