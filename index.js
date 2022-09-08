@@ -104,9 +104,9 @@ const addMember = async () => {
   console.log(
     `
 
-        -----------------
-        | ADD EMPLOYEES |
-        -----------------
+        -------------------
+        | ADD AN EMPLOYEE |
+        -------------------
 
         `
   );
