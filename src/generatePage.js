@@ -1,4 +1,4 @@
-// CREATE MANAGER SECTION //
+// GENERATE MANAGER SECTION
 const generateManagerSection = (manager) => {
     return `
      <div class="card col-md-3 col-sm-6 border-0">
@@ -8,14 +8,14 @@ const generateManagerSection = (manager) => {
         </div>
         <div class="card-body border">
             <p class="eid"> Employee ID: ${manager.eid}</p>
-            <p class="officeNumber"> Office Number: ${manager.officeNumber}</p>
             <p class="email"> Email: <a class="link-primary" href="mailto:${manager.email}">${manager.email}</a></p>
+            <p class="officeNumber"> Office Number: ${manager.officeNumber}</p>
          </div>
     </div>
     `;
 }
 
-// GENERATE ENGINEER SECTION //
+// GENERATE ENGINEER SECTION
 const generateEngineerSection = (engineer) => {
     return `
      <div class="card col-md-3 col-sm-6 border-0">
@@ -25,14 +25,14 @@ const generateEngineerSection = (engineer) => {
         </div>
         <div class="card-body border">
             <p class="eid"> Employee ID: ${engineer.eid}</p>
-            <p class="gitHub"> GitHub: <a class="link-primary" target="_blank" rel="noopener noreferrer" href="https://github.com/${engineer.github}">${engineer.github}</a></p>
             <p class="email"> Email: <a class="link-primary" href="mailto:${engineer.email}">${engineer.email}</a></p>
+            <p class="gitHub"> GitHub: <a class="link-primary" target="_blank" rel="noopener noreferrer" href="https://github.com/${engineer.github}">${engineer.github}</a></p>
          </div>
     </div>
     `;
 }
 
-// GENERATE INTERN SECTION //
+// GENERATE INTERN SECTION
 const generateInternSection = (intern) => {
     return `
      <div class="card col-md-3 col-sm-6 border-0">
@@ -42,14 +42,14 @@ const generateInternSection = (intern) => {
         </div>
         <div class="card-body border">
             <p class="eid"> Employee ID: ${intern.eid}</p>
-            <p class="gitHub"> School: ${intern.school}</p>
             <p class="email"> Email: <a class="link-primary" href="mailto:${intern.email}">${intern.email}</a></p>
+            <p class="gitHub"> School: ${intern.school}</p>
          </div>
     </div>
     `;
 }
 
-// GENERATE FULL HTML PAGE //
+// GENERATE FULL HTML PAGE
 const generateFullHTML = (employeeListHTMLString) => {
     return `
     <!DOCTYPE html>
@@ -74,9 +74,10 @@ const generateFullHTML = (employeeListHTMLString) => {
 }
 
 module.exports = generatePage = (data) => {
-    // GENERATE ARRAY TO CONTAIN EMPLOYEE CARDS //
+    // CREATE ARRAY TO HOLD EMPLOYEE CARD HMTL STRINGS
     let employeeCards = [];
-    // DATA LOOP TO GENERATE THE EMPLOYEE SECTIONS //
+    // LOOP THROUGH DATA TO CREATE EMPLOYEE SECTIONS 
+    // BASED UPON POSITION AND PUSH TO employeeCards ARRAY
     for (let i = 0; i < data.length; i++){
         const employee = data[i];
         const position = employee.getRole(); 
@@ -98,10 +99,10 @@ module.exports = generatePage = (data) => {
         
     }
 
-    // JOIN STRINGS //
+    // JOIN STRINGS
     const employeeListHTMLString = employeeCards.join('');
 
-    // STRING TO GENERATE FULL HTML PAGE //
+    // PASS STRING TO GENERATE FULL HTML PAGE
     const HTMLpage = generateFullHTML(employeeListHTMLString);
     return HTMLpage;
 }
