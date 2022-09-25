@@ -1,4 +1,4 @@
-// GENERATE MANAGER SECTION
+// GENERATE MANAGER SECTION //
 const generateManagerSection = (manager) => {
     return `
      <div class="card col-md-3 col-sm-6 border-0">
